@@ -45,6 +45,8 @@ if bmi < 18.5:
 elif bmi >= 25:
     weight_left = float(weight) - upper_ideal_weight
     bmi_status = 'lose '+str(round(weight_left,2))
+else:
+    bmi_status = False
 
 # Determine BMI category
 if bmi < 15:
@@ -66,6 +68,6 @@ else:
 
 print('\nYour BMI is '+str(round(bmi,2))+', which means that you are '+bmi_cat+'.\n')
 print('Your ideal weight is somewhere between '+str(round(lower_ideal_weight,2))+' and '+str(round(upper_ideal_weight,2))+'kg.\n')
-if bmi_status:
+if bmi_status != False:
     print('This means that you still need to '+bmi_status+'kg to reach normal weight.\n')
 print('Your body fat percentage estimate is '+str(round(body_fat,2))+'% which is '+body_fat_cat+'.')
