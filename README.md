@@ -1,7 +1,7 @@
 Body Analyser
 =============
 
-# About
+## About
 A small program written in Python to analyse BMI and other weight-related stuff
 about a person.
 
