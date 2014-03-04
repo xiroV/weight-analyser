@@ -21,20 +21,21 @@ bmi = float(weight) / math.pow(float(height), 2)
 lower_ideal_weight = math.pow(float(height), 2) * 18.5
 upper_ideal_weight = math.pow(float(height), 2) * 25
 
-body_fat = (1.20 * bmi) + (0.23 * age) - (10.8 * sex) - 5.4
+body_fat_pr = (1.20 * bmi) + (0.23 * age) - (10.8 * sex) - 5.4
+body_fat_kg = body_fat_pr / 100 * float(weight)
 
 # Determine body fat percentage category
 if sex == 1:
-    if body_fat > 24:
+    if body_fat_pr > 24:
         body_fat_cat = 'above average'
-    elif body_fat < 18:
+    elif body_fat_pr < 18:
         body_fat_cat = 'below average'
     else:
         body_fat_cat = 'average'
 else:
-    if body_fat > 31:
+    if body_fat_pr > 31:
         body_fat_cat = 'above average'
-    elif body_fat < 25:
+    elif body_fat_pr < 25:
         body_fat_cat = 'below_average'
     else:
         body_fat_cat = 'average'
@@ -70,4 +71,5 @@ print('\nYour BMI is '+str(round(bmi,2))+', which means that you are '+bmi_cat+'
 print('Your ideal weight is somewhere between '+str(round(lower_ideal_weight,2))+' and '+str(round(upper_ideal_weight,2))+'kg.\n')
 if bmi_status != False:
     print('This means that you still need to '+bmi_status+'kg to reach normal weight.\n')
-print('Your body fat percentage estimate is '+str(round(body_fat,2))+'% which is '+body_fat_cat+'.')
+print('Your body fat estimate is '+str(round(body_fat_kg,2))+'kg.')
+print('This is approximately '+str(round(body_fat_pr,2))+'% of your body weight which is '+body_fat_cat+'.')
