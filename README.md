@@ -7,10 +7,12 @@ about a person.
 The program was written as a hobby/personal project.
 
 ### Usage
-Download body-analyser.py and run with Python:
+The program consist of the class _banalyser.py_, which can be used by import:
 ```
-$ python body-analyser.py
+from banalyser import BAnalyser
 ```
+
+See _example.py_ to see example usage of the class.
 
 Note that the program is written using Python 3, and therefore the Python 3 intepreter
 must be used to launch the program proberly.
