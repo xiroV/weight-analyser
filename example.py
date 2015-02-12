@@ -1,4 +1,4 @@
-from banalyser import BAnalyser
+from wanalyser import WAnalyser
 
 weight = input('Your weight (in kg): ')
 height = input('Your height (in cm): ')
@@ -13,23 +13,23 @@ else:
     print('Invalid sex given')
     exit()
 
-banalyse = BAnalyser()
-banalyse.height = height
-banalyse.weight = weight
-banalyse.age = age
-banalyse.sex = sex
+wanalyse = WAnalyser()
+wanalyse.height = height
+wanalyse.weight = weight
+wanalyse.age = age
+wanalyse.sex = sex
 
 
 print('''
-Your BMI is %s, which means that you are %s.\n
-Your ideal weight is somewhere between %s and %s kg.
-''' % (str(banalyse.bmi()), str(banalyse.bmi_category()), str(banalyse.ideal_weight()[0]), str(banalyse.ideal_weight()[1])))
+Your BMI is %d, which means that you are %s.\n
+Your ideal weight is somewhere between %d and %d kg.
+''' % (wanalyse.bmi(), wanalyse.bmi_category(), wanalyse.ideal_weight()[0], wanalyse.ideal_weight()[1]))
 
-bmi_cat = banalyse.bmi_category()
+bmi_cat = wanalyse.bmi_category()
 if bmi_cat != False:
-    print('This means that you still need %s kg to reach normal weight.' % (banalyse.weight_left()))
+    print('This means that you still need %s kg to reach normal weight.' % (wanalyse.weight_left()))
 
 print('''
-Your body fat estimate is %s kg.\n
-This is approximately %s percent of your body weight which is %s.
-''' % (str(banalyse.body_fat()[1]), str(banalyse.body_fat()[0]), banalyse.body_fat()[2]))
+Your body fat estimate is %d kg.\n
+This is approximately %d percent of your body weight which is %s.
+''' % (wanalyse.body_fat()[1], wanalyse.body_fat()[0], wanalyse.body_fat()[2]))
