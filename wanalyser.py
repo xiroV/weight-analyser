@@ -1,6 +1,6 @@
 import math
 
-class BAnalyser:
+class WAnalyser:
 	def __init__(self):
 		weight = 0
 		height = 0
@@ -47,10 +47,10 @@ class BAnalyser:
 	def weight_left(self):
 		if self.bmi() < 18.5:
 			weight_left = self.ideal_weight()[0] - float(self.weight)
-			bmi_status = '+'+str(round(weight_left,2))
+			bmi_status = round(weight_left,2)
 		elif self.bmi() >= 25:
 			weight_left = float(self.weight) - self.ideal_weight()[1]
-			bmi_status = '-'+str(round(weight_left,2))
+			bmi_status = round(weight_left,2)
 		else:
 			bmi_status = False
 			

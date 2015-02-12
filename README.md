@@ -1,4 +1,4 @@
-##Body Analyser
+## Weight Analyser
 
 ### About
 A small program written in Python 3 to analyse BMI and other weight-related stuff
@@ -7,9 +7,9 @@ about a person.
 The program was written as a hobby/personal project.
 
 ### Usage
-The program consist of the class _banalyser.py_, which can be used by import:
+The program consist of the class _wanalyser.py_, which can be used by import:
 ```
-from banalyser import BAnalyser
+from wanalyser import WAnalyser
 ```
 
 See _example.py_ to see example usage of the class.
